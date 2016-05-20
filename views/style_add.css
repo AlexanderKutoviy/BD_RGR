@@ -1,0 +1,57 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+
+    padding-top: 10px;
+    text-align: center;
+    font-family: elephant;
+    color: #ad5ba4;
+}
+
+body {
+    position: relative;
+}
+
+.input {
+
+    margin-top: 100px;
+    text-align: center;
+}
+
+.left-block {
+
+    background-color: #ad5ba4;
+    color: whitesmoke;
+    padding-left: 20px;
+    padding-top: 20px;
+    width: 200px;
+    height: 345px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.uploaded-video {
+
+    padding-left: 220px;
+    margin-top: 50px;
+}
+
+ul {
+
+    list-style-type: none;
+    text-align: center;
+}
+
+li {
+    text-align: center;
+    display: inline-flex;
+}
+
+.button {
+
+    text-align: center;
+}

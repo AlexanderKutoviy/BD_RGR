@@ -1,0 +1,236 @@
+@font-face {
+    font-family: 'CenturyGothic';
+    src: url("century-gothic.ttf");
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+.tmp {
+    height: 50px;
+    width: 50px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.header {
+
+    padding-top: 10px;
+    text-align: center;
+    font-family: elephant;
+    color: #ad5ba4;
+    margin-bottom: 8px;
+}
+
+.logo {
+    overflow: hidden;
+}
+
+/*=======================================================*/
+/*COL WRAPPER*/
+
+@keyframes colfocus {
+    100% {
+        background-color: #ad5ba4;
+    }
+}
+
+.tmp:hover {
+    opacity: 1;
+}
+
+.col_wrapper {
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    display: inline-block;
+
+}
+
+.col_wrapper:hover {
+    animation: colfocus 1s forwards;
+}
+
+/*=======================================================*/
+.content {
+    margin: auto;
+    margin-top: 55px;
+    height: 90%;
+    max-width: 1100px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*
+
+.col {
+    margin :    auto;
+    width: 250px;
+    height: 200px;
+    padding-left: 0px;
+    background-image: url("content/cakes.png");
+    display: inline-block;
+    
+    
+}
+
+.col_div1 {
+    margin-left : 5px;
+    margin-top : 5px;
+    width : 45px;
+    height : 190px;
+    display: inline-block;
+}
+.col_div2 {
+    margin-left : 1px;
+    margin-top : 5px;
+    width : 45px;
+    height : 190px;
+    display: inline-block;
+}
+.col_div3 {
+    margin-top : 5px;
+    width : 45px;
+    height : 190px;
+    display: inline-block;
+}
+.col_div4 {
+    margin-top : 5px;
+    width : 45px;
+    height : 190px;
+    display: inline-block;
+}
+.col_div5 {
+    margin-top : 5px;
+    width : 45px;
+    height : 190px;
+    display: inline-block;
+}
+
+*/
+
+/*MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU MENU*/
+
+.login_butt {
+    margin-top: 5px;
+    float: right;
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    opacity: 0.6;
+    background-image: url("../content/login_button.png");
+}
+
+login_butt:hover {
+    opacity: 1;
+}
+
+.login {
+    border: 0px;
+    opacity: 0.6;
+    float: right;
+    margin-right: 5px;
+    width: 620px;
+    height: 30px;
+    padding-left: 60px;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-family: CenturyGothic;
+    color: white;
+    background-color: #d0d0d0;
+    margin-top: 5px;
+
+}
+
+.menu {
+    text-decoration: none;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: #ad5ba4;
+}
+
+@keyframes menufocus {
+    100% {
+        background-color: #da73cf;
+    }
+}
+
+@keyframes menuclick {
+    100% {
+        background-color: #ef7fe3;
+    }
+}
+
+.menu_item {
+    display: inline-block;
+
+    margin-left: 5%;
+    margin-right: 5%;
+
+    padding-top: 15px;
+    padding-bottom: 12px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+
+    font-family: CenturyGothic;
+}
+
+.menu_item:hover {
+    animation: menufocus 0.8s forwards;
+}
+
+.menu_item:active {
+    animation: menuclick 0.1s forwards;
+}
+
+.menu_item a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+/*===================================================================*/
+
+.dots {
+    height: 15px;
+    width: 100%;
+    background-image: url("menu_dots.png");
+}
+
+.image-wrapper {
+    display: inline-block;
+    position: relative;
+}
+
+.image-wrapper img {
+    vertical-align: top;
+}
+
+.image-text {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #FFF;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+}
+
+.image-wrapper:hover .image-text {
+    display: block;
+}
