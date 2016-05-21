@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e332135-c365-4a92-beb0-6ebee304f782" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database.php" afterPath="$PROJECT_DIR$/database.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/content.php" afterPath="$PROJECT_DIR$/models/content.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/search_page.php" afterPath="$PROJECT_DIR$/views/search_page.php" />
     </list>
     <ignored path="cakes_site.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,38 +33,56 @@
       </PATH_ELEMENT>
     </PATH>
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/index.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.2836485">
+                    <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="cakes_site" />
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/admin/index.php">
+      <file leaf-file-name="content.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/models/content.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.509636">
-              <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
-              <folding />
+            <state vertical-scroll-proportion="0.8736617">
+              <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+              <folding>
+                <marker date="1463868354982" expanded="true" signature="144:182" placeholder="SELECT * FRO... test" />
+                <marker date="1463868354982" expanded="true" signature="658:843" placeholder="SELECT * FRO... test" />
+                <marker date="1463868354982" expanded="true" signature="1522:1558" placeholder="SELECT * FRO... users" />
+                <marker date="1463868354982" expanded="true" signature="1866:1901" placeholder="SELECT * FRO... test" />
+                <marker date="1463868354982" expanded="true" signature="2656:2686" placeholder="SELECT * FRO... test" />
+                <marker date="1463868354982" expanded="true" signature="3368:3477" placeholder="INSERT INTO test... " />
+                <marker date="1463868354982" expanded="true" signature="3368:3544" placeholder="INSERT INTO test... " />
+                <marker date="1463868354982" expanded="true" signature="4872:5042" placeholder="UPDATE test " />
+                <marker date="1463868354982" expanded="true" signature="5955:5985" placeholder="DELETE FROM " />
+                <marker date="1463868354982" expanded="true" signature="6258:6294" placeholder="SELECT * FRO... users" />
+                <marker date="1463868354982" expanded="true" signature="6703:6747" placeholder="UPDATE users... " />
+                <marker date="1463868354982" expanded="true" signature="7094:7130" placeholder="SELECT * FRO... users" />
+                <marker date="1463868354982" expanded="true" signature="7692:7728" placeholder="SELECT * FRO... users" />
+                <marker date="1463868354982" expanded="true" signature="8273:8317" placeholder="UPDATE users... " />
+                <marker date="1463868354982" expanded="true" signature="9046:9086" placeholder="SELECT * FRO... tags_base" />
+                <marker date="1463868354982" expanded="true" signature="9497:9541" placeholder="UPDATE tags_... " />
+                <marker date="1463868354982" expanded="true" signature="9802:9842" placeholder="SELECT * FRO... tags_base" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,7 +107,6 @@
         <option value="$PROJECT_DIR$/views/admin_add.php" />
         <option value="$PROJECT_DIR$/views/admin_search.php" />
         <option value="$PROJECT_DIR$/views/like.php" />
-        <option value="$PROJECT_DIR$/views/search_page.php" />
         <option value="$PROJECT_DIR$/views/style_add.css" />
         <option value="$PROJECT_DIR$/views/style_for_search.css" />
         <option value="$PROJECT_DIR$/views/style_for_video.css" />
@@ -97,9 +114,10 @@
         <option value="$PROJECT_DIR$/views/user_search.php" />
         <option value="$PROJECT_DIR$/views/video_page.php" />
         <option value="$PROJECT_DIR$/admin/index.php" />
-        <option value="$PROJECT_DIR$/models/content.php" />
         <option value="$PROJECT_DIR$/video_page.php" />
         <option value="$PROJECT_DIR$/database.php" />
+        <option value="$PROJECT_DIR$/views/search_page.php" />
+        <option value="$PROJECT_DIR$/models/content.php" />
       </list>
     </option>
   </component>
@@ -170,6 +188,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cakes_site" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BD_RGR" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -224,6 +256,13 @@
       <option name="number" value="Default" />
       <updated>1463763918944</updated>
     </task>
+    <task id="LOCAL-00001" summary="Change DB">
+      <created>1463865393257</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1463865393257</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -232,6 +271,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.205625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -251,6 +291,11 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change DB" />
+    <MESSAGE value="Implement search by tags via SQL" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement search by tags via SQL" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -334,32 +379,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/content.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.884615">
-          <caret line="317" column="0" selection-start-line="317" selection-start-column="0" selection-end-line="317" selection-end-column="0" />
-          <folding>
-            <marker date="1463771583733" expanded="true" signature="144:179" placeholder="SELECT * FRO... test" />
-            <marker date="1463771583733" expanded="true" signature="680:715" placeholder="SELECT * FRO... test" />
-            <marker date="1463771583733" expanded="true" signature="1407:1443" placeholder="SELECT * FRO... users" />
-            <marker date="1463771583733" expanded="true" signature="1751:1786" placeholder="SELECT * FRO... test" />
-            <marker date="1463771583733" expanded="true" signature="2541:2571" placeholder="SELECT * FRO... test" />
-            <marker date="1463771583733" expanded="true" signature="3253:3362" placeholder="INSERT INTO test... " />
-            <marker date="1463771583733" expanded="true" signature="3253:3429" placeholder="INSERT INTO test... " />
-            <marker date="1463771583733" expanded="true" signature="4757:4927" placeholder="UPDATE test " />
-            <marker date="1463771583733" expanded="true" signature="5840:5870" placeholder="DELETE FROM " />
-            <marker date="1463771583733" expanded="true" signature="6143:6179" placeholder="SELECT * FRO... users" />
-            <marker date="1463771583733" expanded="true" signature="6588:6632" placeholder="UPDATE users... " />
-            <marker date="1463771583733" expanded="true" signature="6979:7015" placeholder="SELECT * FRO... users" />
-            <marker date="1463771583733" expanded="true" signature="7577:7613" placeholder="SELECT * FRO... users" />
-            <marker date="1463771583733" expanded="true" signature="8158:8202" placeholder="UPDATE users... " />
-            <marker date="1463771583733" expanded="true" signature="8931:8971" placeholder="SELECT * FRO... tags_base" />
-            <marker date="1463771583733" expanded="true" signature="9382:9426" placeholder="UPDATE tags_... " />
-            <marker date="1463771583733" expanded="true" signature="9687:9727" placeholder="SELECT * FRO... tags_base" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/add_tags.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.115385">
@@ -378,13 +397,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-64.07692">
           <caret line="98" column="39" selection-start-line="98" selection-start-column="39" selection-end-line="98" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/search_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5062241">
-          <caret line="131" column="56" selection-start-line="131" selection-start-column="56" selection-end-line="131" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -430,27 +442,61 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.21161826">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="78" column="33" selection-start-line="78" selection-start-column="33" selection-end-line="78" selection-end-column="33" />
+        <state vertical-scroll-proportion="-13.769231">
+          <caret line="57" column="41" selection-start-line="57" selection-start-column="41" selection-end-line="57" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/search_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="3.02213">
+          <caret line="131" column="23" selection-start-line="131" selection-start-column="23" selection-end-line="131" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        <state vertical-scroll-proportion="0.2836485">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/database.php">
+    <entry file="file://$PROJECT_DIR$/models/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.509636">
-          <caret line="14" column="2" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-          <folding />
+        <state vertical-scroll-proportion="0.8736617">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding>
+            <marker date="1463868354982" expanded="true" signature="144:182" placeholder="SELECT * FRO... test" />
+            <marker date="1463868354982" expanded="true" signature="658:843" placeholder="SELECT * FRO... test" />
+            <marker date="1463868354982" expanded="true" signature="1522:1558" placeholder="SELECT * FRO... users" />
+            <marker date="1463868354982" expanded="true" signature="1866:1901" placeholder="SELECT * FRO... test" />
+            <marker date="1463868354982" expanded="true" signature="2656:2686" placeholder="SELECT * FRO... test" />
+            <marker date="1463868354982" expanded="true" signature="3368:3477" placeholder="INSERT INTO test... " />
+            <marker date="1463868354982" expanded="true" signature="3368:3544" placeholder="INSERT INTO test... " />
+            <marker date="1463868354982" expanded="true" signature="4872:5042" placeholder="UPDATE test " />
+            <marker date="1463868354982" expanded="true" signature="5955:5985" placeholder="DELETE FROM " />
+            <marker date="1463868354982" expanded="true" signature="6258:6294" placeholder="SELECT * FRO... users" />
+            <marker date="1463868354982" expanded="true" signature="6703:6747" placeholder="UPDATE users... " />
+            <marker date="1463868354982" expanded="true" signature="7094:7130" placeholder="SELECT * FRO... users" />
+            <marker date="1463868354982" expanded="true" signature="7692:7728" placeholder="SELECT * FRO... users" />
+            <marker date="1463868354982" expanded="true" signature="8273:8317" placeholder="UPDATE users... " />
+            <marker date="1463868354982" expanded="true" signature="9046:9086" placeholder="SELECT * FRO... tags_base" />
+            <marker date="1463868354982" expanded="true" signature="9497:9541" placeholder="UPDATE tags_... " />
+            <marker date="1463868354982" expanded="true" signature="9802:9842" placeholder="SELECT * FRO... tags_base" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title> OMFG 18+ </title>
+    <title> Piece-o-cake </title>
     <link rel="stylesheet" href="views/style_for_search.css">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="main.js"></script>
@@ -39,8 +39,6 @@ if (empty($_SESSION['login']) or empty($_SESSION['id'])) {
     // Если пусты, то мы не выводим ссылку
     //echo "Вы вошли на сайт, как гость";
 } else {
-    // Если не пусты, то мы выводим ссылку
-    // echo "Вы вошли на сайт, как ".$_SESSION['login'];
     if ($_SESSION['login'] == 'admin') {
         ?>
         <br><a href="admin"> Admin panel</a>

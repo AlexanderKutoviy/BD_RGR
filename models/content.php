@@ -3,13 +3,12 @@
 function post_all($link)
 {
     //ЗАПРОС-----------------------------------------------------------------------------------
-    $query = "SELECT * FROM test ORDER BY id DESC";
+    $query = "SELECT * FROM Content ORDER BY id DESC";
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
     //ИЗВЛЕЧЕНИЕ ИЗ БД-------------------------------------------------------------------------
     $n = mysqli_num_rows($result);
-    $articles = array();
     for ($i = 0; $i < $n; $i++) {
         $row = mysqli_fetch_assoc($result);
         $content[] = $row;
@@ -21,12 +20,15 @@ function search_all($link, $tmp)
 {
     $str = implode("+", $tmp);
     $sArr = explode("+", $str);
-    $query = "SELECT * FROM test ORDER BY id DESC";
+    $query = "SELECT Content.*, COUNT(*) AS c
+FROM Content_Tags, Tags, Content
+WHERE Content_Tags.tag_id = Tags.tag_id AND Content_Tags.video_id = Content.video_id
+AND tag IN ($tmp)
+GROUP BY video_id";
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
     $n = mysqli_num_rows($result);
-    $articles = array();
     for ($i = 0; $i < $n; $i++) {
         $row = mysqli_fetch_assoc($result);
         $tags = explode("+", $row['tags']);
@@ -38,8 +40,9 @@ function search_all($link, $tmp)
                 }
             }
         }
-        if ($count == count($sArr))
-            $content[] = $row;;
+        if ($count == count($sArr)) {
+            $content[] = $row;
+        };
     }
     return $content;
 }
@@ -315,4 +318,5 @@ function post_tags($link)
         $tags_base = explode("+", $post["tags"]);
     return $tags_base;
 }
+
 ?>
