@@ -116,10 +116,10 @@
             });
         </script>
     <?php } ?>
-
+<br>
     <div class="tags">
         <?php
-        $tTags = $post['tags'];
+        $tTags = explode(",",$post['GROUP_CONCAT(Tags.tag)']);
         for ($i = 0; $i < count($tTags); $i++) {
             ?>
             <div class="nonchosen_tag"><?= $tTags[$i] ?></div>

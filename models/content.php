@@ -69,9 +69,18 @@ function search_name($link, $login)
     return $content;
 }
 
-function getOnePost($link, $id_article)
+function getOnePost($link, $id_video)
 {
-    $query = sprintf("SELECT * FROM Content WHERE video_id=%d", (int)$id_article);
+    $query = sprintf("SELECT Content.*, Tags.tag AS post,
+GROUP_CONCAT(Tags.tag)
+FROM
+  Content
+  INNER JOIN
+  Content_Tags
+    ON Content.video_id = Content_Tags.video_id
+  LEFT JOIN Tags
+    ON Content_Tags.tag_id = Tags.tag_id
+WHERE (Content.video_id = %d)", (int)$id_video);
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
@@ -120,7 +129,7 @@ function addContent($link,
 
     while ($id = current($aTags)) {
         $t = "INSERT INTO Content_Tags (video_id, tag_id) VALUES('%d', '%d')";
-        $query = sprintf($t, $video_id["video_id"], key($aTags)+1);
+        $query = sprintf($t, $video_id["video_id"], key($aTags) + 1);
         $result = mysqli_query($link, $query);
         next($aTags);
     }

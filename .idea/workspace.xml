@@ -3,14 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9e332135-c365-4a92-beb0-6ebee304f782" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/like.php" afterPath="$PROJECT_DIR$/like.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/models/content.php" afterPath="$PROJECT_DIR$/models/content.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/video_page.php" afterPath="$PROJECT_DIR$/video_page.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/admin_add.php" afterPath="$PROJECT_DIR$/views/admin_add.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/like.php" afterPath="$PROJECT_DIR$/views/like.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/search_page.php" afterPath="$PROJECT_DIR$/views/search_page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/video_page.php" afterPath="$PROJECT_DIR$/views/video_page.php" />
     </list>
     <ignored path="cakes_site.iws" />
@@ -49,32 +42,43 @@
       <file leaf-file-name="content.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/models/content.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6252677">
-              <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.66595286">
+              <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
               <folding>
-                <marker date="1463926333906" expanded="true" signature="149:193" placeholder="SELECT * FRO... test" />
-                <marker date="1463926333906" expanded="true" signature="609:816" placeholder="SELECT * FRO... test" />
-                <marker date="1463926333906" expanded="true" signature="1145:1181" placeholder="SELECT * FRO... users" />
-                <marker date="1463926333906" expanded="true" signature="1489:1524" placeholder="SELECT * FRO... test" />
-                <marker date="1463926333906" expanded="true" signature="2281:2320" placeholder="SELECT * FRO... test" />
-                <marker date="1463926333906" expanded="true" signature="3010:3160" placeholder="INSERT INTO Content... " />
-                <marker date="1463926333906" expanded="true" signature="3829:3869" placeholder="SELECT * FRO... Content" />
-                <marker date="1463926333906" expanded="true" signature="3829:3872" placeholder="SELECT video... Content" />
-                <marker date="1463926333906" expanded="true" signature="3829:3873" placeholder="SELECT * FRO... Content" />
-                <marker date="1463926333906" expanded="true" signature="3829:3874" placeholder="SELECT video... Content" />
-                <marker date="1463926333906" expanded="true" signature="3829:3876" placeholder="SELECT video... Content" />
-                <marker date="1463926333906" expanded="true" signature="4113:4175" placeholder="INSERT INTO Content_Tags... " />
-                <marker date="1463926333906" expanded="true" signature="4965:5135" placeholder="UPDATE test " />
-                <marker date="1463926333906" expanded="true" signature="6048:6078" placeholder="DELETE FROM " />
-                <marker date="1463926333906" expanded="true" signature="6350:6386" placeholder="SELECT * FRO... users" />
-                <marker date="1463926333906" expanded="true" signature="6795:6839" placeholder="UPDATE users... " />
-                <marker date="1463926333906" expanded="true" signature="7186:7222" placeholder="SELECT * FRO... users" />
-                <marker date="1463926333906" expanded="true" signature="7784:7820" placeholder="SELECT * FRO... users" />
-                <marker date="1463926333906" expanded="true" signature="8365:8409" placeholder="UPDATE users... " />
-                <marker date="1463926333906" expanded="true" signature="9138:9178" placeholder="SELECT * FRO... tags_base" />
-                <marker date="1463926333906" expanded="true" signature="9589:9633" placeholder="UPDATE tags_... " />
-                <marker date="1463926333906" expanded="true" signature="9990:10010" placeholder="SELECT * FRO... Content" />
+                <marker date="1463931250389" expanded="true" signature="149:193" placeholder="SELECT * FRO... test" />
+                <marker date="1463931250389" expanded="true" signature="609:816" placeholder="SELECT * FRO... test" />
+                <marker date="1463931250389" expanded="true" signature="1145:1181" placeholder="SELECT * FRO... users" />
+                <marker date="1463931250389" expanded="true" signature="1489:1524" placeholder="SELECT * FRO... test" />
+                <marker date="1463931250389" expanded="true" signature="2279:2516" placeholder="SELECT Conte... Content" />
+                <marker date="1463931250389" expanded="true" signature="2279:2517" placeholder="SELECT * FRO... test" />
+                <marker date="1463931250389" expanded="true" signature="3204:3354" placeholder="INSERT INTO Content... " />
+                <marker date="1463931250389" expanded="true" signature="4023:4063" placeholder="SELECT * FRO... Content" />
+                <marker date="1463931250389" expanded="true" signature="4023:4066" placeholder="SELECT video... Content" />
+                <marker date="1463931250389" expanded="true" signature="4023:4067" placeholder="SELECT * FRO... Content" />
+                <marker date="1463931250389" expanded="true" signature="4023:4068" placeholder="SELECT video... Content" />
+                <marker date="1463931250389" expanded="true" signature="4023:4070" placeholder="SELECT video... Content" />
+                <marker date="1463931250389" expanded="true" signature="4307:4369" placeholder="INSERT INTO Content_Tags... " />
+                <marker date="1463931250389" expanded="true" signature="5161:5331" placeholder="UPDATE test " />
+                <marker date="1463931250389" expanded="true" signature="6244:6274" placeholder="DELETE FROM " />
+                <marker date="1463931250389" expanded="true" signature="6546:6582" placeholder="SELECT * FRO... users" />
+                <marker date="1463931250389" expanded="true" signature="6991:7035" placeholder="UPDATE users... " />
+                <marker date="1463931250389" expanded="true" signature="7382:7418" placeholder="SELECT * FRO... users" />
+                <marker date="1463931250389" expanded="true" signature="7980:8016" placeholder="SELECT * FRO... users" />
+                <marker date="1463931250389" expanded="true" signature="8561:8605" placeholder="UPDATE users... " />
+                <marker date="1463931250389" expanded="true" signature="9334:9374" placeholder="SELECT * FRO... tags_base" />
+                <marker date="1463931250389" expanded="true" signature="9785:9829" placeholder="UPDATE tags_... " />
+                <marker date="1463931250389" expanded="true" signature="10186:10206" placeholder="SELECT * FRO... Content" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="video_page.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/video_page.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,8 +86,8 @@
       <file leaf-file-name="video_page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/video_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.346153">
-              <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+            <state vertical-scroll-proportion="-9.153846">
+              <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -319,7 +323,13 @@
       <option name="project" value="LOCAL" />
       <updated>1463916284114</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Add feature 'adding new content'">
+      <created>1463926620530</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1463926620530</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -362,7 +372,8 @@
     <MESSAGE value="Implement search by tags via SQL" />
     <MESSAGE value="Correct search and other SQLs" />
     <MESSAGE value="Add login and sign up" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add login and sign up" />
+    <MESSAGE value="Add feature 'adding new content'" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add feature 'adding new content'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -417,8 +428,28 @@
           <line>10</line>
           <option name="timeStamp" value="46" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/models/content.php</url>
+          <line>73</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/models/content.php</url>
+          <line>83</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/models/content.php</url>
+          <line>86</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/views/video_page.php</url>
+          <line>121</line>
+          <option name="timeStamp" value="50" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="47" />
+      <option name="time" value="51" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="user_search.php">
@@ -446,28 +477,29 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
           <folding>
-            <marker date="1463926333906" expanded="true" signature="149:193" placeholder="SELECT * FRO... test" />
-            <marker date="1463926333906" expanded="true" signature="609:816" placeholder="SELECT * FRO... test" />
-            <marker date="1463926333906" expanded="true" signature="1145:1181" placeholder="SELECT * FRO... users" />
-            <marker date="1463926333906" expanded="true" signature="1489:1524" placeholder="SELECT * FRO... test" />
-            <marker date="1463926333906" expanded="true" signature="2281:2320" placeholder="SELECT * FRO... test" />
-            <marker date="1463926333906" expanded="true" signature="3010:3160" placeholder="INSERT INTO Content... " />
-            <marker date="1463926333906" expanded="true" signature="3829:3869" placeholder="SELECT * FRO... Content" />
-            <marker date="1463926333906" expanded="true" signature="3829:3872" placeholder="SELECT video... Content" />
-            <marker date="1463926333906" expanded="true" signature="3829:3873" placeholder="SELECT * FRO... Content" />
-            <marker date="1463926333906" expanded="true" signature="3829:3874" placeholder="SELECT video... Content" />
-            <marker date="1463926333906" expanded="true" signature="3829:3876" placeholder="SELECT video... Content" />
-            <marker date="1463926333906" expanded="true" signature="4113:4175" placeholder="INSERT INTO Content_Tags... " />
-            <marker date="1463926333906" expanded="true" signature="4965:5135" placeholder="UPDATE test " />
-            <marker date="1463926333906" expanded="true" signature="6048:6078" placeholder="DELETE FROM " />
-            <marker date="1463926333906" expanded="true" signature="6350:6386" placeholder="SELECT * FRO... users" />
-            <marker date="1463926333906" expanded="true" signature="6795:6839" placeholder="UPDATE users... " />
-            <marker date="1463926333906" expanded="true" signature="7186:7222" placeholder="SELECT * FRO... users" />
-            <marker date="1463926333906" expanded="true" signature="7784:7820" placeholder="SELECT * FRO... users" />
-            <marker date="1463926333906" expanded="true" signature="8365:8409" placeholder="UPDATE users... " />
-            <marker date="1463926333906" expanded="true" signature="9138:9178" placeholder="SELECT * FRO... tags_base" />
-            <marker date="1463926333906" expanded="true" signature="9589:9633" placeholder="UPDATE tags_... " />
-            <marker date="1463926333906" expanded="true" signature="9990:10010" placeholder="SELECT * FRO... Content" />
+            <marker date="1463931250389" expanded="true" signature="149:193" placeholder="SELECT * FRO... test" />
+            <marker date="1463931250389" expanded="true" signature="609:816" placeholder="SELECT * FRO... test" />
+            <marker date="1463931250389" expanded="true" signature="1145:1181" placeholder="SELECT * FRO... users" />
+            <marker date="1463931250389" expanded="true" signature="1489:1524" placeholder="SELECT * FRO... test" />
+            <marker date="1463931250389" expanded="true" signature="2279:2516" placeholder="SELECT Conte... Content" />
+            <marker date="1463931250389" expanded="true" signature="2279:2517" placeholder="SELECT * FRO... test" />
+            <marker date="1463931250389" expanded="true" signature="3204:3354" placeholder="INSERT INTO Content... " />
+            <marker date="1463931250389" expanded="true" signature="4023:4063" placeholder="SELECT * FRO... Content" />
+            <marker date="1463931250389" expanded="true" signature="4023:4066" placeholder="SELECT video... Content" />
+            <marker date="1463931250389" expanded="true" signature="4023:4067" placeholder="SELECT * FRO... Content" />
+            <marker date="1463931250389" expanded="true" signature="4023:4068" placeholder="SELECT video... Content" />
+            <marker date="1463931250389" expanded="true" signature="4023:4070" placeholder="SELECT video... Content" />
+            <marker date="1463931250389" expanded="true" signature="4307:4369" placeholder="INSERT INTO Content_Tags... " />
+            <marker date="1463931250389" expanded="true" signature="5161:5331" placeholder="UPDATE test " />
+            <marker date="1463931250389" expanded="true" signature="6244:6274" placeholder="DELETE FROM " />
+            <marker date="1463931250389" expanded="true" signature="6546:6582" placeholder="SELECT * FRO... users" />
+            <marker date="1463931250389" expanded="true" signature="6991:7035" placeholder="UPDATE users... " />
+            <marker date="1463931250389" expanded="true" signature="7382:7418" placeholder="SELECT * FRO... users" />
+            <marker date="1463931250389" expanded="true" signature="7980:8016" placeholder="SELECT * FRO... users" />
+            <marker date="1463931250389" expanded="true" signature="8561:8605" placeholder="UPDATE users... " />
+            <marker date="1463931250389" expanded="true" signature="9334:9374" placeholder="SELECT * FRO... tags_base" />
+            <marker date="1463931250389" expanded="true" signature="9785:9829" placeholder="UPDATE tags_... " />
+            <marker date="1463931250389" expanded="true" signature="10186:10206" placeholder="SELECT * FRO... Content" />
           </folding>
         </state>
       </provider>
@@ -547,13 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.42323652">
           <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/video_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1175657">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -662,14 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/video_page.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
-          <caret line="121" column="19" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.461538">
@@ -678,33 +695,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/video_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/video_page.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.153846">
+          <caret line="119" column="22" selection-start-line="119" selection-start-column="22" selection-end-line="119" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/models/content.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6252677">
-          <caret line="74" column="40" selection-start-line="74" selection-start-column="40" selection-end-line="74" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.66595286">
+          <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
           <folding>
-            <marker date="1463926333906" expanded="true" signature="149:193" placeholder="SELECT * FRO... test" />
-            <marker date="1463926333906" expanded="true" signature="609:816" placeholder="SELECT * FRO... test" />
-            <marker date="1463926333906" expanded="true" signature="1145:1181" placeholder="SELECT * FRO... users" />
-            <marker date="1463926333906" expanded="true" signature="1489:1524" placeholder="SELECT * FRO... test" />
-            <marker date="1463926333906" expanded="true" signature="2281:2320" placeholder="SELECT * FRO... test" />
-            <marker date="1463926333906" expanded="true" signature="3010:3160" placeholder="INSERT INTO Content... " />
-            <marker date="1463926333906" expanded="true" signature="3829:3869" placeholder="SELECT * FRO... Content" />
-            <marker date="1463926333906" expanded="true" signature="3829:3872" placeholder="SELECT video... Content" />
-            <marker date="1463926333906" expanded="true" signature="3829:3873" placeholder="SELECT * FRO... Content" />
-            <marker date="1463926333906" expanded="true" signature="3829:3874" placeholder="SELECT video... Content" />
-            <marker date="1463926333906" expanded="true" signature="3829:3876" placeholder="SELECT video... Content" />
-            <marker date="1463926333906" expanded="true" signature="4113:4175" placeholder="INSERT INTO Content_Tags... " />
-            <marker date="1463926333906" expanded="true" signature="4965:5135" placeholder="UPDATE test " />
-            <marker date="1463926333906" expanded="true" signature="6048:6078" placeholder="DELETE FROM " />
-            <marker date="1463926333906" expanded="true" signature="6350:6386" placeholder="SELECT * FRO... users" />
-            <marker date="1463926333906" expanded="true" signature="6795:6839" placeholder="UPDATE users... " />
-            <marker date="1463926333906" expanded="true" signature="7186:7222" placeholder="SELECT * FRO... users" />
-            <marker date="1463926333906" expanded="true" signature="7784:7820" placeholder="SELECT * FRO... users" />
-            <marker date="1463926333906" expanded="true" signature="8365:8409" placeholder="UPDATE users... " />
-            <marker date="1463926333906" expanded="true" signature="9138:9178" placeholder="SELECT * FRO... tags_base" />
-            <marker date="1463926333906" expanded="true" signature="9589:9633" placeholder="UPDATE tags_... " />
-            <marker date="1463926333906" expanded="true" signature="9990:10010" placeholder="SELECT * FRO... Content" />
+            <marker date="1463931250389" expanded="true" signature="149:193" placeholder="SELECT * FRO... test" />
+            <marker date="1463931250389" expanded="true" signature="609:816" placeholder="SELECT * FRO... test" />
+            <marker date="1463931250389" expanded="true" signature="1145:1181" placeholder="SELECT * FRO... users" />
+            <marker date="1463931250389" expanded="true" signature="1489:1524" placeholder="SELECT * FRO... test" />
+            <marker date="1463931250389" expanded="true" signature="2279:2516" placeholder="SELECT Conte... Content" />
+            <marker date="1463931250389" expanded="true" signature="2279:2517" placeholder="SELECT * FRO... test" />
+            <marker date="1463931250389" expanded="true" signature="3204:3354" placeholder="INSERT INTO Content... " />
+            <marker date="1463931250389" expanded="true" signature="4023:4063" placeholder="SELECT * FRO... Content" />
+            <marker date="1463931250389" expanded="true" signature="4023:4066" placeholder="SELECT video... Content" />
+            <marker date="1463931250389" expanded="true" signature="4023:4067" placeholder="SELECT * FRO... Content" />
+            <marker date="1463931250389" expanded="true" signature="4023:4068" placeholder="SELECT video... Content" />
+            <marker date="1463931250389" expanded="true" signature="4023:4070" placeholder="SELECT video... Content" />
+            <marker date="1463931250389" expanded="true" signature="4307:4369" placeholder="INSERT INTO Content_Tags... " />
+            <marker date="1463931250389" expanded="true" signature="5161:5331" placeholder="UPDATE test " />
+            <marker date="1463931250389" expanded="true" signature="6244:6274" placeholder="DELETE FROM " />
+            <marker date="1463931250389" expanded="true" signature="6546:6582" placeholder="SELECT * FRO... users" />
+            <marker date="1463931250389" expanded="true" signature="6991:7035" placeholder="UPDATE users... " />
+            <marker date="1463931250389" expanded="true" signature="7382:7418" placeholder="SELECT * FRO... users" />
+            <marker date="1463931250389" expanded="true" signature="7980:8016" placeholder="SELECT * FRO... users" />
+            <marker date="1463931250389" expanded="true" signature="8561:8605" placeholder="UPDATE users... " />
+            <marker date="1463931250389" expanded="true" signature="9334:9374" placeholder="SELECT * FRO... tags_base" />
+            <marker date="1463931250389" expanded="true" signature="9785:9829" placeholder="UPDATE tags_... " />
+            <marker date="1463931250389" expanded="true" signature="10186:10206" placeholder="SELECT * FRO... Content" />
           </folding>
         </state>
       </provider>
