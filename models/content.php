@@ -1,6 +1,6 @@
 <?php
 
-function post_all($link)
+function getAllContent($link)
 {
     //ЗАПРОС-----------------------------------------------------------------------------------
     $query = "SELECT * FROM Content ORDER BY video_id DESC";
@@ -16,7 +16,7 @@ function post_all($link)
     return $content;
 }
 
-function search_all($link, $tmp)
+function searchViaTags($link, $tmp)
 {
     $query = "SELECT Content.*, COUNT(*) AS c
 FROM Content_Tags, Tags, Content
@@ -69,9 +69,9 @@ function search_name($link, $login)
     return $content;
 }
 
-function post_get($link, $id_article)
+function getOnePost($link, $id_article)
 {
-    $query = sprintf("SELECT * FROM test WHERE id=%d", (int)$id_article);
+    $query = sprintf("SELECT * FROM Content WHERE video_id=%d", (int)$id_article);
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
@@ -79,39 +79,52 @@ function post_get($link, $id_article)
     return $post;
 }
 
-function post_new($link,
-                  $title,
-                  $video,
-                  $picture,
-                  $description,
-                  $aTags,
-                  $picture1,
-                  $picture2,
-                  $picture3,
-                  $picture4,
-                  $picture5)
+function addContent($link,
+                    $title,
+                    $video,
+                    $poster,
+                    $description,
+                    $aTags,
+                    $pic1,
+                    $pic2,
+                    $pic3,
+                    $pic4,
+                    $pic5,
+                    $allTags)
 {
     //PREPARE
     $title = trim($title);
     $description = trim($description);
-    $tags = implode("+", $aTags);;
     //CHECK
     if ($title == '')
         return false;
-    //QUERY
-    $t = "INSERT INTO test (title, video, picture, description, tags, picture1, picture2, picture3, picture4, picture5) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
+    //INSERT TO CONTENT
+    $t = "INSERT INTO Content (title, description, video_url, poster, pic1, pic2, pic3, pic4, pic5) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
     $query = sprintf($t,
         mysqli_real_escape_string($link, $title),
-        "content/" . mysqli_real_escape_string($link, $video),
-        "content/" . mysqli_real_escape_string($link, $picture),
         mysqli_real_escape_string($link, $description),
-        mysqli_real_escape_string($link, $tags),
-        "content/" . mysqli_real_escape_string($link, $picture1),
-        "content/" . mysqli_real_escape_string($link, $picture2),
-        "content/" . mysqli_real_escape_string($link, $picture3),
-        "content/" . mysqli_real_escape_string($link, $picture4),
-        "content/" . mysqli_real_escape_string($link, $picture5));
+        "content/" . mysqli_real_escape_string($link, $video),
+        "content/" . mysqli_real_escape_string($link, $poster),
+        "content/" . mysqli_real_escape_string($link, $pic1),
+        "content/" . mysqli_real_escape_string($link, $pic2),
+        "content/" . mysqli_real_escape_string($link, $pic3),
+        "content/" . mysqli_real_escape_string($link, $pic4),
+        "content/" . mysqli_real_escape_string($link, $pic5));
     $result = mysqli_query($link, $query);
+    //GET VIDEO_ID AND TAGS_IDS
+    $query = sprintf("SELECT video_id FROM Content WHERE title=\"%s\"", mysqli_real_escape_string($link, $title));
+    $result = mysqli_query($link, $query);
+    if (!$result)
+        die(mysqli_error($link));
+    $video_id = mysqli_fetch_assoc($result);
+
+    while ($id = current($aTags)) {
+        $t = "INSERT INTO Content_Tags (video_id, tag_id) VALUES('%d', '%d')";
+        $query = sprintf($t, $video_id["video_id"], key($aTags)+1);
+        $result = mysqli_query($link, $query);
+        next($aTags);
+    }
+
     if (!$result)
         die(mysqli_error($link));
     return true;
@@ -171,11 +184,11 @@ function post_delete($link, $id)
     return mysqli_affected_rows($link);
 }
 
-function push_video($link, $user, $video)
+function likeVideo($link, $user, $video)
 {
     $user = trim($user);
     $video = trim($video);
-    $query = sprintf("SELECT * FROM users WHERE login='%s'", $user);
+    $query = sprintf("SELECT * FROM Users WHERE login='%s'", $user);
     $result = mysqli_query($link, $query);
     if (!$result) {
         die(mysqli_error($link));

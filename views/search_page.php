@@ -49,7 +49,7 @@ if (empty($_SESSION['login']) or empty($_SESSION['id'])) {
 <div class="content">
     <?php for ($j = 0; $j < count($content); $j = $j + 1) { ?>
         <div class="col_wrapper">
-            <div class="col<?= $j ?>"><a href="video_page.php?id=<?= $content[$j]['id'] ?>">
+            <div class="col<?= $j ?>"><a href="video_page.php?id=<?= $content[$j]['video_id'] ?>">
                     <div class="col_div1<?= $j ?>"></div>
                     <div class="col_div2<?= $j ?>"></div>
                     <div class="col_div3<?= $j ?>"></div>
@@ -119,22 +119,22 @@ if (empty($_SESSION['login']) or empty($_SESSION['id'])) {
         </style>
         <script>
             $(document).ready(function () {
-                $(".col<?=$j?>").css('backgroundImage', 'url(<?=$content[$j]['picture']?>)');
+                $(".col<?=$j?>").css('backgroundImage', 'url(<?=$content[$j]['poster']?>)');
                 $(".col<?=$j?>").mouseenter(function () {
                     $(".col_div1<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture1']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic1']?>)");
                     });
                     $(".col_div2<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture2']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic2']?>)");
                     });
                     $(".col_div3<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture3']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic3']?>)");
                     });
                     $(".col_div4<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture4']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic4']?>)");
                     });
                     $(".col_div5<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture5']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic5']?>)");
                     });
                 });
             });

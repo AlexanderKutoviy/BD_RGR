@@ -119,7 +119,7 @@
 
     <div class="tags">
         <?php
-        $tTags = explode("+", $post['tags']);
+        $tTags = $post['tags'];
         for ($i = 0; $i < count($tTags); $i++) {
             ?>
             <div class="nonchosen_tag"><?= $tTags[$i] ?></div>

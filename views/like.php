@@ -9,7 +9,7 @@ $video = strval($_POST['video']);
 if (isset($user) && isset($video)) {
     $error = false;
     print_r($_POST);
-    push_video($link, $user, $video);
+    likeVideo($link, $user, $video);
 } else {
     $error = true;
     echo json_encode($error);

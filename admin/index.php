@@ -22,7 +22,7 @@ if ($action == "add") {//_______________________________________________________
         $b7 = move($_FILES['picture5']['name'], $_FILES['picture5']['tmp_name']);
 
         if ($b1 && $b2 && $b3 && $b4 && $b5 && $b6 && $b7) {
-            post_new($link,
+            addContent($link,
                 $_POST['title'],
                 $_FILES['video']['name'],
                 $_FILES['picture']['name'],
@@ -32,7 +32,8 @@ if ($action == "add") {//_______________________________________________________
                 $_FILES['picture2']['name'],
                 $_FILES['picture3']['name'],
                 $_FILES['picture4']['name'],
-                $_FILES['picture5']['name']);
+                $_FILES['picture5']['name'],
+                $tags_base);
         }
         header("Location:index.php");
     }
@@ -68,12 +69,12 @@ if ($action == "add") {//_______________________________________________________
         header("Location: index.php");
     }
 
-    $post = post_get($link, $id);
+    $post = getOnePost($link, $id);
     include("../views/admin_add.php");
 
 } else if ($action == "delete") {//_____________________________________________________________________________________ DELETE
     $id = $_GET['id'];
-    $post = post_get($link, $_GET['id']);
+    $post = getOnePost($link, $_GET['id']);
     deleteFile('C:/xampp/htdocs/cakes_site/' . $post['video']);
     $post = post_delete($link, $id);
     header("Location:index.php");
@@ -84,7 +85,7 @@ if ($action == "add") {//_______________________________________________________
     }
     include("../views/add_tags.php");
 } else {//______________________________________________________________________________________________________________ MAIN
-    $content = post_all($link);
+    $content = getAllContent($link);
     include("../views/admin_search.php");
 }
 ?>

@@ -12,7 +12,7 @@ if (isset($user) && isset($video)) {
     echo '<script type="text/javascript">alert(' . $user + $video . ');</script>';
     $error = false;
     //print_r($_POST);
-    push_video($link, $user, $video);
+    likeVideo($link, $user, $video);
 } else {
     $error = true;
 }
