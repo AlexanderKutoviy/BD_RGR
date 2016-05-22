@@ -12,7 +12,6 @@ if (isset($_GET['action'])) {
 }
 
 if ($action == "search") {
-    echo implode("+", $_POST['tags']);
     $content = search_all($link, $_POST['tags']);
 } else if ($action == "bookmarks") {
     $content = search_name($link, $_SESSION['login']);
