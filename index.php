@@ -14,7 +14,7 @@ if (isset($_GET['action'])) {
 if ($action == "search") {
     $content = searchViaTags($link, $_POST['tags']);
 } else if ($action == "bookmarks") {
-    $content = search_name($link, $_SESSION['login']);
+    $content = getLikedVideos($link, $_SESSION['login']);
     if (!isset($content)) {
         echo "У вас еще нет любимых записей";
     }

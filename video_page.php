@@ -10,7 +10,7 @@ if (isset($_GET['action'])) {
     $action = "";
 }
 $post = getOnePost($link, $_GET['id']);
-$likes = get_liked($link, $_SESSION['login']);
+$likes = getLikedVideos($link, $_SESSION['login']);
 error_reporting(E_ERROR);
 include("views/video_page.php");
 ?>

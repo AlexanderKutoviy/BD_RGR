@@ -12,7 +12,7 @@ $video = $_SESSION['video'];
 if (isset($user) && isset($video)) {
     echo '<script type="text/javascript">alert(' . $user + $video . ');</script>';
     $error = false;
-    unlike_video($link, $user, $video);
+    unlikeVideo($link, $user, $video);
 } else {
     $error = true;
 }

@@ -32,8 +32,7 @@ if ($action == "add") {//_______________________________________________________
                 $_FILES['picture2']['name'],
                 $_FILES['picture3']['name'],
                 $_FILES['picture4']['name'],
-                $_FILES['picture5']['name'],
-                $tags_base);
+                $_FILES['picture5']['name']);
         }
         header("Location:index.php");
     }
@@ -53,7 +52,7 @@ if ($action == "add") {//_______________________________________________________
         $b7 = move($_FILES['picture5']['name'], $_FILES['picture5']['tmp_name']);
 
         if ($b1 && $b2 && $b3 && $b4 && $b5 && $b6 && $b7) {
-            post_edit($link,
+            editPost($link,
                 $id,
                 $_POST['title'],
                 $_FILES['video']['name'],
@@ -76,7 +75,7 @@ if ($action == "add") {//_______________________________________________________
     $id = $_GET['id'];
     $post = getOnePost($link, $_GET['id']);
     deleteFile('C:/xampp/htdocs/cakes_site/' . $post['video']);
-    $post = post_delete($link, $id);
+    $post = deletePost($link, $id);
     header("Location:index.php");
 } else if ($action == "put") {//________________________________________________________________________________________ PUT
     if (!empty($_POST)) {
