@@ -30,14 +30,14 @@ $password = trim($password);
 $password = md5($password);//шифруем пароль
 $password = strrev($password);//реверс
 $password = $password . "b3p6f";
-$query = sprintf("SELECT * FROM users WHERE login='%s'", $login);
+$query = sprintf("SELECT * FROM Users WHERE login='%s'", $login);
 $result = mysqli_query($link, $query);
 $myrow = mysqli_fetch_assoc($result);
 if (!empty($myrow['id'])) {
     exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин.");
 }
 // если такого нет, то сохраняем данные
-$t = "INSERT INTO users (login,password) VALUES('%s','%s')";
+$t = "INSERT INTO Users (login,password) VALUES('%s','%s')";
 $query = sprintf($t, $login, $password);
 $result2 = mysqli_query($link, $query);
 // Проверяем, есть ли ошибки

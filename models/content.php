@@ -1,15 +1,14 @@
 <?php
 
-function post_all($link)
+function getAllContent($link)
 {
     //ЗАПРОС-----------------------------------------------------------------------------------
-    $query = "SELECT * FROM test ORDER BY id DESC";
+    $query = "SELECT * FROM Content ORDER BY video_id DESC";
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
     //ИЗВЛЕЧЕНИЕ ИЗ БД-------------------------------------------------------------------------
     $n = mysqli_num_rows($result);
-    $articles = array();
     for ($i = 0; $i < $n; $i++) {
         $row = mysqli_fetch_assoc($result);
         $content[] = $row;
@@ -17,46 +16,29 @@ function post_all($link)
     return $content;
 }
 
-function search_all($link, $tmp)
+function searchViaTags($link, $tmp)
 {
-    $str = implode("+", $tmp);
-    $sArr = explode("+", $str);
-    $query = "SELECT * FROM test ORDER BY id DESC";
+    $query = "SELECT Content.*, COUNT(*) AS c
+FROM Content_Tags, Tags, Content
+WHERE Content_Tags.tag_id = Tags.tag_id AND Content_Tags.video_id = Content.video_id
+AND tag IN (\"" . implode("\",\"", $tmp) . "\")
+GROUP BY video_id";
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
     $n = mysqli_num_rows($result);
-    $articles = array();
     for ($i = 0; $i < $n; $i++) {
         $row = mysqli_fetch_assoc($result);
-        $tags = explode("+", $row['tags']);
-        $count = 0;
-        for ($j = 0; $j < count($sArr); $j++) {
-            for ($a = 0; $a < count($tags); $a++) {
-                if (strcasecmp($sArr[$j], $tags[$a]) == 0) {
-                    $count++;
-                }
-            }
-        }
-        if ($count == count($sArr))
-            $content[] = $row;;
+        $content[] = $row;
     }
     return $content;
 }
 
-function search_name($link, $login)
+function getLikedVideos($link, $login)
 {
-    $query1 = sprintf("SELECT * FROM users WHERE login='%s'", $login);
-    $result1 = mysqli_query($link, $query1);
-    if (!$result1)
-        die(mysqli_error($link));
-    $res = mysqli_fetch_assoc($result1);
-    $users = explode(" ", $res["liked"]);
-    for ($a = 0; $a < count($users); $a++) {
-        $input[] = $users[$a];
-    }
-    unset($users);
-    $query = "SELECT * FROM test ORDER BY id DESC";
+    $query = sprintf("SELECT * FROM Content WHERE video_id IN
+	(SELECT Likes.video_id FROM Likes WHERE
+		user_id = (SELECT Users.user_id FROM Users WHERE login='%s'))", $login);
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
@@ -64,24 +46,23 @@ function search_name($link, $login)
     $n = mysqli_num_rows($result);
     for ($i = 0; $i < $n; $i++) {
         $row = mysqli_fetch_assoc($result);
-        $cont[] = $row;
-        $count = 0;
-        for ($j = 0; $j < count($cont); $j++) {
-            for ($a = 0; $a < count($input); $a++) {
-                if (strcasecmp($cont[$i]['video'], $input[$a]) == 0) {
-                    $count++;
-                }
-            }
-        }
-        if ($count == count($cont))
-            $content[] = $row;;
+        $content[] = $row;
     }
     return $content;
 }
 
-function post_get($link, $id_article)
+function getOnePost($link, $id_video)
 {
-    $query = sprintf("SELECT * FROM test WHERE id=%d", (int)$id_article);
+    $query = sprintf("SELECT Content.*, Tags.tag AS post,
+GROUP_CONCAT(Tags.tag)
+FROM
+  Content
+  INNER JOIN
+  Content_Tags
+    ON Content.video_id = Content_Tags.video_id
+  LEFT JOIN Tags
+    ON Content_Tags.tag_id = Tags.tag_id
+WHERE (Content.video_id = %d)", (int)$id_video);
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
@@ -89,91 +70,92 @@ function post_get($link, $id_article)
     return $post;
 }
 
-function post_new($link,
+function addContent($link,
+                    $title,
+                    $video,
+                    $poster,
+                    $description,
+                    $aTags,
+                    $pic1,
+                    $pic2,
+                    $pic3,
+                    $pic4,
+                    $pic5)
+{
+    //PREPARE
+    $title = trim($title);
+    $description = trim($description);
+    //CHECK
+    if ($title == '')
+        return false;
+    //INSERT TO CONTENT
+    $t = "INSERT INTO Content (title, description, video_url, poster, pic1, pic2, pic3, pic4, pic5)
+ VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
+    $query = sprintf($t,
+        mysqli_real_escape_string($link, $title),
+        mysqli_real_escape_string($link, $description),
+        "content/" . mysqli_real_escape_string($link, $video),
+        "content/" . mysqli_real_escape_string($link, $poster),
+        "content/" . mysqli_real_escape_string($link, $pic1),
+        "content/" . mysqli_real_escape_string($link, $pic2),
+        "content/" . mysqli_real_escape_string($link, $pic3),
+        "content/" . mysqli_real_escape_string($link, $pic4),
+        "content/" . mysqli_real_escape_string($link, $pic5));
+    $result = mysqli_query($link, $query);
+    //GET VIDEO_ID AND TAGS_IDS
+    $query = sprintf("SELECT video_id FROM Content WHERE title=\"%s\"", mysqli_real_escape_string($link, $title));
+    $result = mysqli_query($link, $query);
+    if (!$result)
+        die(mysqli_error($link));
+    $video_id = mysqli_fetch_assoc($result);
+
+    while ($id = current($aTags)) {
+        $t = "INSERT INTO Content_Tags (video_id, tag_id) VALUES('%d', '%d')";
+        $query = sprintf($t, $video_id["video_id"], key($aTags) + 1);
+        $result = mysqli_query($link, $query);
+        next($aTags);
+    }
+
+    if (!$result)
+        die(mysqli_error($link));
+    return true;
+}
+
+function editPost($link,
+                  $id,
                   $title,
                   $video,
                   $picture,
                   $description,
-                  $aTags,
+                  $tags,
                   $picture1,
                   $picture2,
                   $picture3,
                   $picture4,
                   $picture5)
 {
-    //PREPARE
-    $title = trim($title);
-    $description = trim($description);
-    $tags = implode("+", $aTags);;
-    //CHECK
-    if ($title == '')
-        return false;
-    //QUERY
-    $t = "INSERT INTO test (title, video, picture, description, tags, picture1, picture2, picture3, picture4, picture5) VALUES('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
-    $query = sprintf($t,
-        mysqli_real_escape_string($link, $title),
-        "content/" . mysqli_real_escape_string($link, $video),
-        "content/" . mysqli_real_escape_string($link, $picture),
-        mysqli_real_escape_string($link, $description),
-        mysqli_real_escape_string($link, $tags),
-        "content/" . mysqli_real_escape_string($link, $picture1),
-        "content/" . mysqli_real_escape_string($link, $picture2),
-        "content/" . mysqli_real_escape_string($link, $picture3),
-        "content/" . mysqli_real_escape_string($link, $picture4),
-        "content/" . mysqli_real_escape_string($link, $picture5));
-    $result = mysqli_query($link, $query);
-    if (!$result)
-        die(mysqli_error($link));
-    return true;
+
+    deletePost($link, $id);
+    addContent($link,
+        $title,
+        $video,
+        $picture,
+        $description,
+        $tags,
+        $picture1,
+        $picture2,
+        $picture3,
+        $picture4,
+        $picture5);
 }
 
-function post_edit($link,
-                   $id,
-                   $title,
-                   $video,
-                   $picture,
-                   $description,
-                   $tags,
-                   $picture1,
-                   $picture2,
-                   $picture3,
-                   $picture4,
-                   $picture5)
-{
-
-    $id = (int)$id;
-    $title = trim($title);
-    $video = trim($video);
-    $picture = trim($picture);
-    $description = trim($description);
-    $tags = trim($tags);
-    if ($title == '')
-        return false;
-    $sql = " UPDATE test SET title='%s', video='%s', picture='%s', description='%s', tags='%s', picture1='%s', picture2='%s', picture3='%s', picture4='%s', picture5='%s' WHERE id='%d' ";
-    $query = sprintf($sql,
-        mysqli_real_escape_string($link, $title),
-        "content/" . mysqli_real_escape_string($link, $video),
-        "content/" . mysqli_real_escape_string($link, $picture),
-        mysqli_real_escape_string($link, $description),
-        mysqli_real_escape_string($link, $tags),
-        "content/" . mysqli_real_escape_string($link, $picture1),
-        "content/" . mysqli_real_escape_string($link, $picture2),
-        "content/" . mysqli_real_escape_string($link, $picture3),
-        "content/" . mysqli_real_escape_string($link, $picture4),
-        "content/" . mysqli_real_escape_string($link, $picture5), $id);
-    $result = mysqli_query($link, $query);
-    if (!$result)
-        die(mysqli_error($link));
-    return mysqli_affected_rows($link);
-}
-
-function post_delete($link, $id)
+function deletePost($link, $id)
 {
     $id = (int)$id;
     if ($id == 0) {
         return false;
     }
-    $query = sprintf("DELETE FROM test WHERE id='%d'", $id);
+    $query = sprintf("DELETE FROM Content WHERE video_id='%d'", $id);
     $result = mysqli_query($link, $query);
     if (!$result) {
         die(mysqli_error($link));
@@ -181,37 +163,36 @@ function post_delete($link, $id)
     return mysqli_affected_rows($link);
 }
 
-function push_video($link, $user, $video)
+function likeVideo($link, $user, $video)
 {
     $user = trim($user);
     $video = trim($video);
-    $query = sprintf("SELECT * FROM users WHERE login='%s'", $user);
+    $query = sprintf("SELECT user_id FROM Users WHERE login='%s'", $user);
     $result = mysqli_query($link, $query);
     if (!$result) {
         die(mysqli_error($link));
     }
-    $post = mysqli_fetch_assoc($result);
-    if (!empty($post["liked"]))
-        $liked_videos = explode(" ", $post["liked"]);
-    $liked_videos[] = $video;
-    $chk = array_unique($liked_videos);
-    $update = implode(" ", $chk);
-    if ($user == '') {
-        return false;
-    }
-    $sql = " UPDATE users SET liked='%s' WHERE login='%s'";
-    $query1 = sprintf($sql, mysqli_real_escape_string($link, $update), mysqli_real_escape_string($link, $user));
+    $user_id = mysqli_fetch_assoc($result);
+    $query1 = sprintf("SELECT video_id FROM Content WHERE video_url='%s'", $video);
     $result1 = mysqli_query($link, $query1);
     if (!$result1) {
         die(mysqli_error($link));
     }
+    $video_id = mysqli_fetch_assoc($result1);
+
+    $t = "INSERT INTO Likes (video_id, user_id) VALUES('%s', '%s')";
+    $query2 = sprintf($t, $video_id["video_id"], $user_id["user_id"]);
+    $result2 = mysqli_query($link, $query2);
+    if (!$result2) {
+        die(mysqli_error($link));
+    }
     return mysqli_affected_rows($link);
 }
 
-function get_liked($link, $user)
+function getLikedVideo($link, $user)
 {
     $user = trim($user);
-    $query = sprintf("SELECT * FROM users WHERE login='%s'", $user);
+    $query = sprintf("SELECT * FROM Users WHERE login='%s'", $user);
     $result = mysqli_query($link, $query);
     if (!$result) {
         die(mysqli_error($link));
@@ -234,32 +215,26 @@ function isLiked($current, $suspect)
     return false;
 }
 
-function unlike_video($link, $user, $video)
+function unlikeVideo($link, $user, $video)
 {
     $user = trim($user);
     $video = trim($video);
-    $query = sprintf("SELECT * FROM users WHERE login='%s'", $user);
+    $query = sprintf("SELECT user_id FROM Users WHERE login='%s'", $user);
     $result = mysqli_query($link, $query);
     if (!$result) {
         die(mysqli_error($link));
     }
-    $post = mysqli_fetch_assoc($result);
-    if (!empty($post["liked"]))
-        $liked_videos = explode(" ", $post["liked"]);
-    for ($i = 0; $i < count($liked_videos); $i++) {
-        if (strcmp($liked_videos[$i], $video) == 0) {
-            $position = $i;
-        }
-    }
-    array_splice($liked_videos, $position, 1);
-    $update = implode(" ", $liked_videos);
-    if ($user == '') {
-        return false;
-    }
-    $sql = " UPDATE users SET liked='%s' WHERE login='%s'";
-    $query1 = sprintf($sql, mysqli_real_escape_string($link, $update), mysqli_real_escape_string($link, $user));
+    $user_id = mysqli_fetch_assoc($result);
+    $query1 = sprintf("SELECT video_id FROM Content WHERE video_url='%s'", $video);
     $result1 = mysqli_query($link, $query1);
     if (!$result1) {
+        die(mysqli_error($link));
+    }
+    $video_id = mysqli_fetch_assoc($result1);
+
+    $query = sprintf("DELETE FROM Likes WHERE user_id='%d' AND video_id='%d'", $user_id["user_id"], $video_id["video_id"]);
+    $result = mysqli_query($link, $query);
+    if (!$result) {
         die(mysqli_error($link));
     }
     return mysqli_affected_rows($link);
@@ -284,35 +259,31 @@ function deleteFile($dir)
     return true;
 }
 
-function putTags($link, $tags)
+function putTags($link, $sTags)
 {
-    $query = "SELECT * FROM tags_base ORDER BY id DESC";
-    $result = mysqli_query($link, $query);
-    if (!$result)
-        die(mysqli_error($link));
-    $post = mysqli_fetch_assoc($result);
-    if (!empty($post["tags"]))
-        $tags_base = explode("+", $post["tags"]);
-    $tags_base1 = explode("+", $tags);
-    $result = array_merge($tags_base, $tags_base1);
-    $update = implode("+", $result);//" UPDATE users SET liked='%s' WHERE login='%s'";
-    $sql = " UPDATE tags_base SET tags='%s' WHERE id='%d'";
-    $query1 = sprintf($sql, mysqli_real_escape_string($link, $update), 1);
-    $result1 = mysqli_query($link, $query1);
-    if (!$result1)
-        die(mysqli_error($link));
-    return mysqli_affected_rows($link);
+    $tags = explode("+", $sTags);
+    foreach ($tags as $tag) {
+        $t = "INSERT INTO Tags (tag) VALUES('%s')";
+        $query = sprintf($t, $tag);
+        $result = mysqli_query($link, $query);
+    }
 }
 
 function post_tags($link)
 {
-    $query = "SELECT * FROM tags_base ORDER BY id DESC";
+    //ЗАПРОС-----------------------------------------------------------------------------------
+    $query = "SELECT tag FROM Tags";
     $result = mysqli_query($link, $query);
     if (!$result)
         die(mysqli_error($link));
-    $post = mysqli_fetch_assoc($result);
-    if (!empty($post["tags"]))
-        $tags_base = explode("+", $post["tags"]);
-    return $tags_base;
+    //ИЗВЛЕЧЕНИЕ ИЗ БД-------------------------------------------------------------------------
+    $n = mysqli_num_rows($result);
+    $content = array();
+    for ($i = 0; $i < $n; $i++) {
+        $row = mysqli_fetch_assoc($result);
+        $content[$i] = $row;
+    }
+    return $content;
 }
+
 ?>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title> OMFG 18+ </title>
+    <title> Piece-o-cake </title>
     <link rel="stylesheet" href="views/style_for_search.css">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="main.js"></script>
@@ -39,8 +39,6 @@ if (empty($_SESSION['login']) or empty($_SESSION['id'])) {
     // Если пусты, то мы не выводим ссылку
     //echo "Вы вошли на сайт, как гость";
 } else {
-    // Если не пусты, то мы выводим ссылку
-    // echo "Вы вошли на сайт, как ".$_SESSION['login'];
     if ($_SESSION['login'] == 'admin') {
         ?>
         <br><a href="admin"> Admin panel</a>
@@ -51,7 +49,7 @@ if (empty($_SESSION['login']) or empty($_SESSION['id'])) {
 <div class="content">
     <?php for ($j = 0; $j < count($content); $j = $j + 1) { ?>
         <div class="col_wrapper">
-            <div class="col<?= $j ?>"><a href="video_page.php?id=<?= $content[$j]['id'] ?>">
+            <div class="col<?= $j ?>"><a href="video_page.php?id=<?= $content[$j]['video_id'] ?>">
                     <div class="col_div1<?= $j ?>"></div>
                     <div class="col_div2<?= $j ?>"></div>
                     <div class="col_div3<?= $j ?>"></div>
@@ -121,22 +119,22 @@ if (empty($_SESSION['login']) or empty($_SESSION['id'])) {
         </style>
         <script>
             $(document).ready(function () {
-                $(".col<?=$j?>").css('backgroundImage', 'url(<?=$content[$j]['picture']?>)');
+                $(".col<?=$j?>").css('backgroundImage', 'url(<?=$content[$j]['poster']?>)');
                 $(".col<?=$j?>").mouseenter(function () {
                     $(".col_div1<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture1']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic1']?>)");
                     });
                     $(".col_div2<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture2']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic2']?>)");
                     });
                     $(".col_div3<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture3']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic3']?>)");
                     });
                     $(".col_div4<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture4']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic4']?>)");
                     });
                     $(".col_div5<?=$j?>").mouseenter(function () {
-                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['picture5']?>)");
+                        $(".col<?=$j?>").css("backgroundImage", "url(<?=$content[$j]['pic5']?>)");
                     });
                 });
             });

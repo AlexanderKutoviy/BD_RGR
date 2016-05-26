@@ -15,21 +15,7 @@ session_start();
 require_once("../database.php");
 require_once("../models/content.php");
 $link = db_connect();
-$arr = post_all($link);
-for ($i = 0; $i < count($arr); $i++) {
-    $res = explode("+", $arr[$i]['tags']);
-    for ($j = 0; $j < count($res); $j++) {
-        $input[] = $res[$j];
-    }
-    unset($res);
-}
-$ttt = array_unique($input);
-for ($o = 0; $o < count($ttt); $o++) {
-    if (isset($ttt[$o]))
-        $tags[] = $ttt[$o];
-}
-unset($input);
-unset($ttt);
+$tags = post_tags($link);
 ?>
 <div class="menu" align="center">
     <a href="../index.php">
@@ -60,8 +46,8 @@ unset($ttt);
             for ($i = 0; $i < 5; $i++) {
                 ?>
                 <input type="checkbox" name="tags[<?= $i ?>]" id="tag<?= $i ?>" class="hide-checkbox"
-                       value="<?= $tags[$i] ?>">
-                <label for="tag<?= $i ?>"><?= $tags[$i] ?></label>
+                       value="<?= $tags[$i]["tag"] ?>">
+                <label for="tag<?= $i ?>"><?= $tags[$i]["tag"] ?></label>
             <?php } ?>
             <br>
             <br>
@@ -74,8 +60,8 @@ unset($ttt);
             for ($i = 5; $i < count($tags); $i++) {
                 ?>
                 <input type="checkbox" name="tags[<?= $i ?>]" id="tag<?= $i ?>" class="hide-checkbox"
-                       value="<?= $tags[$i] ?>">
-                <label for="tag<?= $i ?>"><?= $tags[$i] ?></label>
+                       value="<?= $tags[$i]["tag"] ?>">
+                <label for="tag<?= $i ?>"><?= $tags[$i]["tag"] ?></label>
             <?php } ?>
         </div>
         <div class="getit">

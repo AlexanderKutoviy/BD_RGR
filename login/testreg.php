@@ -44,10 +44,10 @@ exit("Вы набрали логин или пароль неверно 3 раз
 $password = md5($password);//шифруем пароль
 $password = strrev($password);//реверс
 $password = $password . "b3p6f";
-$query = sprintf("SELECT * FROM users WHERE login='%s' AND password='%s'", $login, $password);
+$query = sprintf("SELECT * FROM Users WHERE login='%s' AND password='%s'", $login, $password);
 $result = mysqli_query($link, $query); //извлекаем из базы все данные о пользователе с введенным логином
 $myrow = mysqli_fetch_array($result);
-if (empty($myrow['id'])) {
+if (empty($myrow['user_id'])) {
     //если пользователя с введенным логином и паролем не существует,то записываем ip пользователя и с датой ошибки
     $q1 = sprintf("SELECT ip FROM ips WHERE ip='%s' ", $ip);
     $select = mysqli_query($link, $q1);
@@ -67,7 +67,7 @@ if (empty($myrow['id'])) {
 } else {
     $_SESSION['password'] = $myrow['password'];
     $_SESSION['login'] = $myrow['login'];
-    $_SESSION['id'] = $myrow['id'];
+    $_SESSION['id'] = $myrow['user_id'];
     if (isset($_POST['save'])) {
         setcookie("login", $_POST["login"], time() + 9999999);
         setcookie("password", $_POST["password"], time() + 9999999);

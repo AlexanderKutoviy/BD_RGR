@@ -17,22 +17,22 @@
     <div class="registration_body">
         <div class="registration_form">
             <form action="save_user.php" method="post">
-                Login<br><br><input name="login" type="text" size="15" maxlength="15" id="login"></input><br><br><br>
+                Login<br><br><input name="login" type="text" size="15" maxlength="15" id="login"><br><br><br>
                 <div class="separator"></div>
                 <br><br>
-                Password<br><br><input name="password" type="password" size="15" maxlength="15" id="pass"></input>
+                Password<br><br><input name="password" type="password" size="15" maxlength="15" id="pass">
                 <br><br><br>
                 <div class="submit"><input type="submit" name="submit" value="Зарегистрироваться"></div>
             </form>
         </div>
         <div class="registration_form">
             <form action="testreg.php" method="post">
-                Login<br><br><input name="login" id="login" type="text" size="15" maxlength="15"></input><br><br><br>
+                Login<br><br><input name="login" id="login" type="text" size="15" maxlength="15"/><br><br><br>
                 <div class="separator"></div>
                 <br><br>
-                Password<br><br><input name="password" type="password" id="pass" size="15" maxlength="15"></input>
+                Password<br><br><input name="password" type="password" id="pass" size="15" maxlength="15"/>
                 <br><br><br>
-                <div class="submit"><input type="submit" name="submit" value="Sign Up"></input></div>
+                <div class="submit"><input type="submit" name="submit" value="Sign Up"></div>
             </form>
         </div>
 

@@ -37,8 +37,8 @@
         for ($i = 0; $i < count($tags_base); $i++) {
             ?>
             <input type="checkbox" name="tags[<?= $i ?>]" id="tag<?= $i ?>" class="hide-checkbox"
-                   value="<?= $tags_base[$i] ?>">
-            <label for="tag<?= $i ?>"><?= $tags_base[$i] ?></label>
+                   value="<?= $tags_base[$i]["tag"] ?>">
+            <label for="tag<?= $i ?>"><?= $tags_base[$i]['tag'] ?></label>
         <?php } ?>
         <br>
         <br>

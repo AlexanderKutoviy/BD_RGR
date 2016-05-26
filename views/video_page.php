@@ -37,11 +37,11 @@
 
 <div class="center">
     <video id="video1" controls preload> <!--16/9-->
-        <source src="<?= $post['video'] ?>" type="video/mp4">
+        <source src="<?= $post['video_url'] ?>" type="video/mp4">
         Your browser does not support HTML5 video.
     </video>
     <?php
-    $_SESSION['video'] = $post['video'];
+    $_SESSION['video'] = $post['video_url'];
     ?>
     <script>
         var v = document.getElementById("video1");
@@ -59,8 +59,9 @@
     <span></span>
     <br>
     <?php
+    //-------------------------------------------------------------------CHECK IF VIDEO IS LIKED
     for ($i = 0; $i < count($likes); $i++) {
-        if (strcmp($post['video'], $likes[$i]) == 0) {
+        if (strcmp($post['video_id'], $likes[$i]["video_id"]) == 0) {
             $count = 1;
             break;
         } else {
@@ -116,10 +117,10 @@
             });
         </script>
     <?php } ?>
-
+<br>
     <div class="tags">
         <?php
-        $tTags = explode("+", $post['tags']);
+        $tTags = explode(",",$post['GROUP_CONCAT(Tags.tag)']);
         for ($i = 0; $i < count($tTags); $i++) {
             ?>
             <div class="nonchosen_tag"><?= $tTags[$i] ?></div>
